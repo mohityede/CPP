@@ -3,15 +3,21 @@ using namespace std;
 
 bool getAns(int n, long long int arr[])
 {
+    sort(arr, arr + n);
     for (int i = 0; i < n - 1; i++)
     {
-        for (int j = i + 1; j < n; j++)
+        if (arr[i] == arr[i + 1])
+            return false;
+    }
+    for (int ind = 2; ind <= (n / 2); ind++)
+    {
+        vector<int> temp(ind, 0);
+        for (int i = 0; i < n; i++)
         {
-            if (arr[i] == arr[j])
-                return false;
-            if (arr[i] == 1 || arr[j] == 1)
-                return false;
+            temp[arr[i] % ind]++;
         }
+        if (*min_element(temp.begin(), temp.end()) >= 2)
+            return false;
     }
     return true;
 }
