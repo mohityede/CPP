@@ -6,17 +6,34 @@ void solve()
 {
     int n;
     cin >> n;
-    if (n % 2 == 1)
+
+    if (n == 3)
     {
         cout << "NO" << endl;
         return;
     }
     cout << "YES" << endl;
-    int num = 1;
+    int a, b;
+    if (n % 2 == 0)
+    {
+        a = 1;
+        b = -1;
+    }
+    else
+    {
+        a = (n - 2) / 2;
+        b = -(n - 2 + 1) / 2;
+    }
     for (int i = 0; i < n; i++)
     {
-        cout << num << " ";
-        num *= -1;
+        if (i % 2 == 0)
+        {
+            cout << a << " ";
+        }
+        else
+        {
+            cout << b << " ";
+        }
     }
     cout << endl;
 }
