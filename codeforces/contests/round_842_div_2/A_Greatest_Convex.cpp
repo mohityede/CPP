@@ -1,17 +1,25 @@
 #include <bits/stdc++.h>
 #define ll long long
-#define priQinc priority_queue<int, vector<int>, greater<int>>
-#define priQdec priority_queue<int>
 using namespace std;
 
 void solve()
 {
+    int n;
+    cin >> n;
+    if (n == 1)
+    {
+        cout << (-1) << endl;
+    }
+    else
+    {
+        cout << (n - 1) << endl;
+    }
 }
 
 int main()
 {
     int testCase = 1;
-    // cin >> testCase;
+    cin >> testCase;
     while (testCase--)
     {
         solve();
